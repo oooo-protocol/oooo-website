@@ -18,7 +18,7 @@ pnpm build:prod
 pnpm build:analyze
 ```
 
-### Folder Structure
+## Folder Structure
 | Name         | Description                                           |
 | ------------ | ----------------------------------------------------- |
 | public       | Store files that need to be packaged into dist folder |
