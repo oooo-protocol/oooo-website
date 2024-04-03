@@ -11,6 +11,10 @@ const routes: RouteRecordRaw[] = [
         path: '',
         name: 'home',
         component: async () => await import('@/pages/main/index.vue')
+      }, {
+        path: '/chestchase',
+        name: 'ChestChase',
+        component: async () => await import('@/pages/chest-chase/index.vue')
       }
     ]
   }

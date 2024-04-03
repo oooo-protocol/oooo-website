@@ -7,6 +7,10 @@ import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuIte
 
 const menus = [
   {
+    name: 'CHEST CHASE',
+    link: '/chestchase'
+  },
+  {
     name: 'BRIDGE',
     children: [
       {
