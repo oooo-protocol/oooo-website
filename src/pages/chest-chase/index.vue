@@ -84,7 +84,8 @@ onUnmounted(() => {
   font-family: 'NeueBit';
 
   width:1256px;
-  margin: 40px auto 0 auto;
+  margin: auto;
+  padding-top: 40px;
   transform-origin: center top;
 
   .act-header {
