@@ -21,4 +21,7 @@
     background-color: #000;
     color: #ffffff;
   }
+  body {
+    overflow-x: hidden;
+  }
 }

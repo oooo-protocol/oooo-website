@@ -58,7 +58,7 @@ onMounted(async () => {
 
 <template>
   <div class="oooo-model" />
-  <div class="relative flex flex-col min-h-[calc(100%-208px)] px-[24px] md:px-[48px] xl:px-[120px] overflow-x-hidden">
+  <div class="relative flex flex-col min-h-[calc(100%-208px)] px-[24px] md:px-[48px] xl:px-[120px]">
     <h2 class="relative z-[1] box-content py-[32px] md:pt-[40px] md:pb-[120px] xl:pt-[32px] xl:pb-[80px] xl:pr-[540px] text-[24px] md:text-[32px] xl:text-[48px] leading-none font-light uppercase max-w-[549px] xl:max-w-[968px]">
       <b>
         <a
