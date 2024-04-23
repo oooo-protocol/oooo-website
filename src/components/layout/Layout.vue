@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import AppHeader from './AppHeader.vue'
+import AppFooter from './AppFooter.vue'
 
+const route = useRoute()
 </script>
 
 <template>
@@ -13,6 +15,7 @@ import AppHeader from './AppHeader.vue'
       />
     </KeepAlive>
   </RouterView>
+  <AppFooter :is-hide-logo="route.name === 'home'" />
 </template>
 
 <style lang="scss" scoped>

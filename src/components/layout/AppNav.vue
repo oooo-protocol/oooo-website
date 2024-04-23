@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useWindowSize } from '@vueuse/core'
-import Icon from '@/components/Icon.vue'
+import Icon from 'oooo-components/ui/Icon.vue'
 import AppNavItem from './AppNavItem.vue'
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from '../ui/dropdown-menu'
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from 'oooo-components/ui/dropdown-menu'
 
 const menus = [
   {
@@ -67,7 +67,7 @@ const { width } = useWindowSize()
   </template>
   <template v-else>
     <Icon
-      class="cursor-pointer text-[26px]"
+      class="shrink-0 cursor-pointer text-[26px]"
       name="menu"
       @click="showMenubar = true"
     />

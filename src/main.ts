@@ -5,6 +5,7 @@ import App from './App.vue'
 import router from './router'
 import '@/assets/iconfont/iconfont.js'
 import '@/assets/index.css'
+
 import { VueQueryPlugin } from '@tanstack/vue-query'
 
 const pinia = createPinia()

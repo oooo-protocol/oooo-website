@@ -1,34 +1,46 @@
-import type { BrowserProvider, Eip1193Provider } from 'ethers'
+import { type CHAIN } from '@/entities/chain'
 
-export interface ChainConfig {
-  chainId: string
-  chainName: string
-  rpcUrls: string[]
-  nativeCurrency: {
-    name: string
-    symbol: string
-    decimals: number
-  }
-  blockExplorerUrls: string[]
+export enum WALLET {
+  METAMASK,
+  OKX,
+  UNISAT,
+  OKX_BITCOIN
+}
+
+export enum WALLET_TYPE {
+  BITCOIN = 'bitcoin',
+  ETHEREUM = 'ethereum'
 }
 
 export interface TransactionParameter {
-  nonce?: string
-  gasPrice: string
-  gas: string
-  to: string
   from: string
+  to: string
   value: string
-  data?: string
-  chainId: string
+  gas: string
+  chain: CHAIN
 }
 
 export interface WalletImpl {
-  provider: BrowserProvider & Eip1193Provider
+  type: WALLET_TYPE
+  getProvider: any
+  getAccounts: () => Promise<string[]>
   connect: () => Promise<string>
   disconnect: () => Promise<void>
-  switchToChain: (chain: string) => Promise<void>
-  addToChain: (config: ChainConfig) => Promise<void>
-  signTransaction: (parameter: TransactionParameter) => Promise<string>
+  sign: (message: string, from: string) => Promise<string>
   removeAllListeners: () => void
+}
+
+export interface WalletOptions {
+  getProvider: () => any
+  disconnect?: () => Promise<void>
+}
+
+export interface EthereumWalletImpl extends WalletImpl {
+  type: WALLET_TYPE.ETHEREUM
+}
+
+export interface BitcoinWalletImpl extends WalletImpl {
+  type: WALLET_TYPE.BITCOIN
+  getPublicKey: () => Promise<string>
+  getNativeBalance: () => Promise<string>
 }

@@ -1,22 +1,20 @@
 import { defineMap } from '@preflower/utils'
+import OKX_IMAGE from '@/assets/wallets/okx.png'
+import METAMASK_IMAGE from '@/assets/wallets/metamask.png'
+import { WALLET } from '@/entities/wallet'
 
-export enum WALLET {
-  METAMASK,
-  OKX
-}
+export const ENV_VARIABLE = import.meta.env
 
-export const WALLETS = [
+export const ETH_WALLETS = [
   {
-    name: 'MetaMask',
+    name: 'METMASK',
     value: WALLET.METAMASK,
-    icon: 'metamask'
+    image: METAMASK_IMAGE
   }, {
-    name: 'OKX Wallet',
+    name: 'OKX WALLET',
     value: WALLET.OKX,
-    icon: 'OKX'
+    image: OKX_IMAGE
   }
 ]
 
-export const WALLET_MAP = defineMap(WALLETS, 'value', ['name', 'icon'])
-
-export const CHAIN_CONFIG_MAP: Record<string, any> = {}
+export const WALLET_MAP = defineMap(ETH_WALLETS, 'value', ['name', 'image'])

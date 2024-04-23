@@ -6,6 +6,7 @@
     "moduleResolution": "Node",
     "strict": true,
     "jsx": "preserve",
+    "jsxImportSource": "vue",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
@@ -22,10 +23,17 @@
     "paths": {
       "@/*": [
         "src/*"
+      ],
+      "oooo-components/*": [
+        "submodules/oooo-components/src/*"
       ]
     }
   },
   "include": [
+    "submodules/**/*.ts",
+    "submodules/**/*.d.ts",
+    "submodules/**/*.tsx",
+    "submodules/**/*.vue",
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",

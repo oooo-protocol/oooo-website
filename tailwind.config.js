@@ -4,6 +4,7 @@ import animate from 'tailwindcss-animate'
 export const darkMode = ['class']
 export const safelist = ['dark']
 export const content = [
+  './submodules/**/*.{ts,tsx,vue}',
   './pages/**/*.{ts,tsx,vue}',
   './components/**/*.{ts,tsx,vue}',
   './app/**/*.{ts,tsx,vue}',
@@ -74,13 +75,18 @@ export const theme = {
       'collapsible-up': {
         from: { height: 'var(--radix-collapsible-content-height)' },
         to: { height: 0 }
+      },
+      'spin-reverse': {
+        from: { transform: 'rotate(0deg)' },
+        to: { transform: 'rotate(-360deg)' }
       }
     },
     animation: {
       'accordion-down': 'accordion-down 0.2s ease-out',
       'accordion-up': 'accordion-up 0.2s ease-out',
       'collapsible-down': 'collapsible-down 0.2s ease-in-out',
-      'collapsible-up': 'collapsible-up 0.2s ease-in-out'
+      'collapsible-up': 'collapsible-up 0.2s ease-in-out',
+      'spin-reverse': 'spin-reverse 1s linear infinite'
     }
   }
 }

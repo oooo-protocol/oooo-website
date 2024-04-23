@@ -4,33 +4,23 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
-import { Button } from '@/components/ui/button'
-import { WALLETS, WALLET_MAP } from '@/lib/constants'
-import type { WALLET } from '@/lib/constants'
-import Icon from '@/components/Icon.vue'
+} from 'oooo-components/ui/dropdown-menu'
+import { Button } from 'oooo-components/ui/button'
+import { WALLET_MAP } from '@/lib/constants'
+import Icon from 'oooo-components/ui/Icon.vue'
 import { useWallet } from '@/composables/hooks/use-wallet'
 import { formatHashWithEllipsis } from '@/lib/utils'
+import WalletConnectButton from '@/components/WalletConnectButton.vue'
 
-const loading = ref(false)
-const { wallet, onConnect, onLogout } = useWallet()
-
-const onConnectWallet = async (value: WALLET) => {
-  try {
-    loading.value = true
-    await onConnect(value)
-    loading.value = false
-  } catch (e) {}
-}
+const { wallet, onLogout } = useWallet()
 
 const onClickLogout = () => {
   void onLogout()
-  location.reload()
 }
 </script>
 
 <template>
-  <DropdownMenu>
+  <DropdownMenu v-if="wallet">
     <DropdownMenuTrigger as-child>
       <Button
         class="w-[196px] tracking-[1px] text-[#bce4cd] select-none"
@@ -38,44 +28,24 @@ const onClickLogout = () => {
       >
         <div
           class="flex items-center gap-[8px]"
-          v-if="wallet"
         >
-          <Icon
-            class="text-[24px]"
-            :name="WALLET_MAP[wallet.name].icon"
-          />
+          <img
+            class="w-[24px] h-[24px]"
+            :src="WALLET_MAP[wallet.name].image"
+          >
           <p>{{ formatHashWithEllipsis(wallet.address) }}</p>
           <Icon
             class="text-[24px]"
             name="a-arrowdown"
           />
         </div>
-        <template v-else>
-          CONNECT WALLET
-        </template>
       </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent class="px-0 py-[12px] border-none min-w-[var(--radix-popper-anchor-width)]">
-      <!-- Wallet connected -->
-      <template v-if="wallet">
-        <DropdownMenuItem @click="onClickLogout">
-          DISCONNECT
-        </DropdownMenuItem>
-      </template>
-      <!-- Wallet disconnect -->
-      <DropdownMenuItem
-        v-else
-        class="flex items-center gap-[8px]"
-        v-for="item of WALLETS"
-        :key="item.value"
-        @click="onConnectWallet(item.value)"
-      >
-        <Icon
-          class="text-[24px]"
-          :name="item.icon"
-        />
-        {{ item.name }}
+      <DropdownMenuItem @click="onClickLogout">
+        DISCONNECT
       </DropdownMenuItem>
     </DropdownMenuContent>
   </DropdownMenu>
+  <WalletConnectButton v-else />
 </template>

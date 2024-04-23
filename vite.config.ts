@@ -8,6 +8,7 @@ import tailwind from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
 import nesting from 'tailwindcss/nesting'
 import { createHtmlPlugin } from 'vite-plugin-html'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -19,6 +20,7 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [
       vue(),
+      vueJsx(),
       AutoImport({
         imports: [
           'vue',
@@ -69,7 +71,8 @@ export default defineConfig(({ mode }) => {
     },
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, 'src')
+        '@': path.resolve(__dirname, 'src'),
+        'oooo-components': path.resolve(__dirname, 'submodules/oooo-components/src')
       }
     }
   }
