@@ -44,7 +44,7 @@ watch(signature, (signature) => {
     <p class="text-[24px] xl:text-[50px] font-medium tracking-[1.2px] leading-[1.17]">
       BRIDGER TO EARN Goooo! LET'S Goooo!
     </p>
-    <p class="mt-[12px] text-[13px] xl:text-[24px] font-light tracking-[1.2px]">
+    <p class="mt-[12px] text-[13px] xl:text-[24px] tracking-[1.2px]">
       READY TO EARN YOUR Goooo?
     </p>
   </header>
