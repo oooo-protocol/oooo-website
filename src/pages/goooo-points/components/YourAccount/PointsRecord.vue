@@ -36,8 +36,7 @@ const { isPending, data } = useQuery({
 })
 
 // temp to fix Pagination component error
-// reference: https://github.com/radix-vue/radix-vue/pull/857
-const total = computed(() => Math.max(data.value?.total ?? 0, 1))
+const total = computed(() => data.value?.total ?? 0)
 </script>
 
 <template>

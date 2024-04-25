@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Pagination, PaginationList, PaginationPrev, PaginationNext, PaginationListItem } from 'oooo-components/ui/pagination'
+import { Pagination, PaginationList, PaginationPrev, PaginationNext, PaginationListItem, PaginationEllipsis } from 'oooo-components/ui/pagination'
 import { Button } from 'oooo-components/ui/button'
 import Icon from 'oooo-components/ui/Icon.vue'
 </script>
@@ -26,12 +26,18 @@ import Icon from 'oooo-components/ui/Icon.vue'
         >
           <Button
             class="select-none"
-            :class="item.value === page ? 'text-[#ffffff]' : 'text-[#9e9e9e]'"
+            :class="item.value === page ? 'text-[#ffffff]' : 'text-[#9e9e9e] hidden md:block'"
             variant="ghost"
           >
             {{ item.value }}
           </Button>
         </PaginationListItem>
+        <PaginationEllipsis
+          v-else
+          class="hidden md:flex"
+          :key="item.type"
+          :index="index"
+        />
       </template>
 
       <PaginationNext>

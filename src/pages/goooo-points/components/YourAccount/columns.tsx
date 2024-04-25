@@ -2,7 +2,7 @@ import { PointLog } from '@/request/api/task'
 import { ColumnDef } from '@tanstack/vue-table'
 import dayjs from 'dayjs'
 
-export const columns: Array<ColumnDef<PointLog>> = [
+export const columns: Array<ColumnDef<PointLog, any>> = [
   {
     accessorKey: 'createTime',
     header: () => {
