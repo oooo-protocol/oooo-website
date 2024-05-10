@@ -1,17 +1,19 @@
 <script setup lang="ts">
 // import copy from 'copy-text-to-clipboard'
-import { Button } from 'oooo-components/ui/button'
+// import { Button } from 'oooo-components/ui/button'
 // import Icon from 'oooo-components/ui/Icon.vue'
 // import { useToast } from 'oooo-components/ui/toast'
 
-import TaskCard from './TaskCard.vue'
-import TaskItem from './TaskItem.vue'
+import MoreSoon from './MoreSoon.vue'
+
+// import TaskCard from './TaskCard.vue'
+// import TaskItem from './TaskItem.vue'
 // import TwitterTaskItem from './TwitterTaskItem.vue'
 // import DiscordTaskItem from './DiscordTaskItem.vue'
 
 // import FOLLOW_TO_EARN_IMAGE from '@/assets/images/goooo-points/follow.png'
 // import INVITE_TO_EARN_IMAGE from '@/assets/images/goooo-points/invite.png'
-import BRIDGE_TO_EARN_IMAGE from '@/assets/images/goooo-points/bridge.png'
+// import BRIDGE_TO_EARN_IMAGE from '@/assets/images/goooo-points/bridge.png'
 // import { useWallet } from '@/composables/hooks/use-wallet'
 // import { useSignature } from '../../hooks/use-signature'
 // import { useQuery } from '@tanstack/vue-query'
@@ -50,6 +52,7 @@ import BRIDGE_TO_EARN_IMAGE from '@/assets/images/goooo-points/bridge.png'
     <h3 class="text-[32px] font-[600] tracking-[1.6px]">
       EARN POINTS
     </h3>
+    <MoreSoon />
     <!-- <TaskCard
       title="FOLLOW TO EARN"
       :img="FOLLOW_TO_EARN_IMAGE"
@@ -135,7 +138,7 @@ import BRIDGE_TO_EARN_IMAGE from '@/assets/images/goooo-points/bridge.png'
         </Button>
       </TaskItem>
     </TaskCard> -->
-    <TaskCard
+    <!-- <TaskCard
       title="BRIDGE TO EARN"
       :img="BRIDGE_TO_EARN_IMAGE"
     >
@@ -154,7 +157,7 @@ import BRIDGE_TO_EARN_IMAGE from '@/assets/images/goooo-points/bridge.png'
           GO TO BRIDGE
         </Button>
       </TaskItem>
-    </TaskCard>
+    </TaskCard> -->
   </div>
 </template>
 
