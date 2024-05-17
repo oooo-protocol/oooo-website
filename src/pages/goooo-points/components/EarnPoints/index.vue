@@ -14,6 +14,10 @@ import TaskItem from './TaskItem.vue'
 // import FOLLOW_TO_EARN_IMAGE from '@/assets/images/goooo-points/follow.png'
 // import INVITE_TO_EARN_IMAGE from '@/assets/images/goooo-points/invite.png'
 import BRIDGE_TO_EARN_IMAGE from '@/assets/images/goooo-points/bridge.png'
+
+import BITLAYER_IMAGE from '@/assets/images/goooo-points/bitlayer.png' 
+import BEVM_IMAGE from '@/assets/images/goooo-points/bevm.png' 
+
 // import { useWallet } from '@/composables/hooks/use-wallet'
 // import { useSignature } from '../../hooks/use-signature'
 // import { useQuery } from '@tanstack/vue-query'
@@ -145,7 +149,7 @@ import BRIDGE_TO_EARN_IMAGE from '@/assets/images/goooo-points/bridge.png'
       <TaskItem
         title="BRIDGE $BTC FROM ANY CHAIN TO BITLAYER."
         description="BRIDGE $BTC FROM ANY CHAIN TO BITLAYER AND RECEIVE 8 Goooo AS A REWARD FOR EACH TRANSACTION COMPLETED."
-        icon="bbitcoin"
+        :image="BITLAYER_IMAGE"
       >
         <Button
           class="w-full md:w-[174px]"
@@ -160,7 +164,7 @@ import BRIDGE_TO_EARN_IMAGE from '@/assets/images/goooo-points/bridge.png'
       <TaskItem
         title="BRIDGE $BTC FROM BINANCE TO BEVM."
         description="BRIDGE $BTC FROM BINANCE TO BEVM AND RECEIVE 4 Goooo AS A REWARD FOR EACH TRANSACTION COMPLETED."
-        icon="bbitcoin"
+        :image="BEVM_IMAGE"
       >
         <Button
           class="w-full md:w-[174px]"

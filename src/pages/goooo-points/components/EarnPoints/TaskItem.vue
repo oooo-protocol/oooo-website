@@ -7,6 +7,7 @@ defineOptions({ name: 'TaskItem' })
 
 defineProps<{
   icon?: string
+  image?: string
   title?: string
   points?: string
   description?: string
@@ -24,6 +25,11 @@ const { wallet } = useWallet()
         class="shrink-0 mr-[16px] text-[44px]"
         :name="icon"
       />
+      <img
+        v-if="image"
+        class="shrink-0 mr-[16px] w-[44px]"
+        :src="image"
+      >
       <div>
         <div class="flex flex-col md:flex-row md:items-center gap-[8px] md:gap-[30px] text-[14px] font-medium -tracking-tighter">
           <slot name="title">
