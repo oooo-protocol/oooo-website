@@ -157,6 +157,21 @@ import BRIDGE_TO_EARN_IMAGE from '@/assets/images/goooo-points/bridge.png'
           GO TO BRIDGE
         </Button>
       </TaskItem>
+      <TaskItem
+        title="BRIDGE $BTC FROM BINANCE TO BEVM."
+        description="BRIDGE $BTC FROM BINANCE TO BEVM AND RECEIVE 4 Goooo AS A REWARD FOR EACH TRANSACTION COMPLETED."
+        icon="bbitcoin"
+      >
+        <Button
+          class="w-full md:w-[174px]"
+          size="sm"
+          as="a"
+          href="https://bridge.oooo.money/?from=binance&to=bevm"
+          target="_blank"
+        >
+          GO TO BRIDGE
+        </Button>
+      </TaskItem>
     </TaskCard>
   </div>
 </template>
