@@ -1,44 +1,69 @@
 import { useWallet } from '@/composables/hooks/use-wallet'
 import { uuid } from 'oooo-components/lib/utils'
+import { storage } from '@preflower/utils'
+
+const SIGNATURE_STORAGE_KEY = '__oooo-signature'
+
+interface SignatureStorage {
+  walletAddress: string
+  signature: string
+  signContent: string
+}
 
 export const useSignatureProvider = () => {
   const { wallet, sign, onLogout } = useWallet()
-  const signature = ref<string>()
-  const signContent = computed(() => {
-    // just for update signContent when wallet change
-    let text = wallet.value?.address
 
-    text = `oooo Authentication
+  const signatureStorage = ref(storage.local.get<SignatureStorage>(SIGNATURE_STORAGE_KEY))
+  const signature = computed(() => signatureStorage.value?.signature)
+  const signContent = computed(() => signatureStorage.value?.signContent ?? '')
+
+  const generateSignContent = () => {
+    return `oooo Authentication
 Welcome to oooo!
 The signature is only used to verify your wallet address and does not involve any asset transfers.
 Timestamp: ${+new Date()}
 Thank you for using oooo for a secure and decentralized experience.
 oooo Team
 Nonce: ${uuid()}`
-
-    return text
-  })
+  }
 
   const onSign = async () => {
     if (!wallet.value) return
 
     try {
-      signature.value = await sign(signContent.value, wallet.value.address)
+      const _signContent = generateSignContent()
+      const _signature = await sign(_signContent, wallet.value.address)
+      signatureStorage.value = {
+        walletAddress: wallet.value.address,
+        signature: _signature,
+        signContent: _signContent
+      }
+      storage.local.set(SIGNATURE_STORAGE_KEY, signatureStorage.value)
     } catch {
       void onLogout()
     }
   }
 
-  onBeforeMount(async () => {
-    await onSign()
-  })
+  const onSignout = () => {
+    signatureStorage.value = null
+    storage.local.remove(SIGNATURE_STORAGE_KEY)
+  }
 
   watch(wallet, async (wallet) => {
-    if (!wallet) {
-      signature.value = undefined
-    } else {
+    if (wallet == null) {
+      onSignout()
+      return
+    }
+    if (signatureStorage.value == null) {
+      await onSign()
+      return
+    }
+    if (wallet.address !== signatureStorage.value.walletAddress) {
+      onSignout()
       await onSign()
     }
+  }, {
+    immediate: true
   })
 
   provide('signature-provider', { signature, signContent })
@@ -48,7 +73,7 @@ Nonce: ${uuid()}`
 
 export const useSignature = () => {
   const value = inject<{
-    signature: Ref<string | undefined>
+    signature: Ref<string | null>
     signContent: Ref<string>
   }>('signature-provider')
 
