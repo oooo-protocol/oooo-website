@@ -15,8 +15,8 @@ import TaskItem from './TaskItem.vue'
 // import INVITE_TO_EARN_IMAGE from '@/assets/images/goooo-points/invite.png'
 import BRIDGE_TO_EARN_IMAGE from '@/assets/images/goooo-points/bridge.png'
 
-import BITLAYER_IMAGE from '@/assets/images/goooo-points/bitlayer.png' 
-import BEVM_IMAGE from '@/assets/images/goooo-points/bevm.png' 
+import BITLAYER_IMAGE from '@/assets/images/goooo-points/bitlayer.png'
+// import BEVM_IMAGE from '@/assets/images/goooo-points/bevm.png'
 
 // import { useWallet } from '@/composables/hooks/use-wallet'
 // import { useSignature } from '../../hooks/use-signature'
@@ -161,7 +161,7 @@ import BEVM_IMAGE from '@/assets/images/goooo-points/bevm.png'
           GO TO BRIDGE
         </Button>
       </TaskItem>
-      <TaskItem
+      <!-- <TaskItem
         title="BRIDGE $BTC FROM BINANCE TO BEVM."
         description="BRIDGE $BTC FROM BINANCE TO BEVM AND RECEIVE 4 Goooo AS A REWARD FOR EACH TRANSACTION COMPLETED."
         :image="BEVM_IMAGE"
@@ -175,7 +175,7 @@ import BEVM_IMAGE from '@/assets/images/goooo-points/bevm.png'
         >
           GO TO BRIDGE
         </Button>
-      </TaskItem>
+      </TaskItem> -->
     </TaskCard>
   </div>
 </template>
