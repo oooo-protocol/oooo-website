@@ -67,7 +67,7 @@ onMounted(async () => {
           target="_blank"
         >oooo</a>
       </b>
-      IS THE FIRST MODULAR <b>BITCOIN</b> AND <b>L2</b> LIQUIDITY CROSS-ROLLUP BRIDGE PROTOCOL
+      IS THE FIRST MODULAR OMNICHAIN INTEROPERABILITY PROTOCOL SUPPORTING <b>BITCOIN ECOSYSTEM</b>.
     </h2>
     <div class="relative grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 gap-y-[24px] md:gap-y-[80px] -mx-[24px] mb-auto pb-[52px] md:pb-[173px] xl:pb-[327px] px-[24px] xl:w-[1300px] normal-case">
       <div
