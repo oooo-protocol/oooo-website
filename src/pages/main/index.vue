@@ -100,7 +100,7 @@ onMounted(async () => {
             Powered by oooo | Terms of Use
           </a>
         </div> -->
-        <div class="relative z-0 -ml-[9px] h-[80px] md:h-[160px] xl:h-[240px] md:-ml-[20px] md:text-right">
+        <div class="relative -ml-[9px] h-[80px] md:h-[160px] xl:h-[240px] md:-ml-[20px] md:text-right">
           <p class="absolute text-[80px] md:text-[160px] xl:text-[240px] leading-none overflow-y-hidden font-medium normal-case">
             {Bitcoin}
           </p>
