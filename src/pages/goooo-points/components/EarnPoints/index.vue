@@ -17,6 +17,7 @@ import BRIDGE_TO_EARN_IMAGE from '@/assets/images/goooo-points/bridge.png'
 
 import BITLAYER_IMAGE from '@/assets/images/goooo-points/bitlayer.png'
 // import BEVM_IMAGE from '@/assets/images/goooo-points/bevm.png'
+import MERLIN_IMAGE from '@/assets/images/goooo-points/merlin.png'
 
 // import { useWallet } from '@/composables/hooks/use-wallet'
 // import { useSignature } from '../../hooks/use-signature'
@@ -150,6 +151,7 @@ import BITLAYER_IMAGE from '@/assets/images/goooo-points/bitlayer.png'
         title="BRIDGE $BTC FROM ANY CHAIN TO BITLAYER."
         description="BRIDGE $BTC FROM ANY CHAIN TO BITLAYER AND RECEIVE 8 Goooo AS A REWARD FOR EACH TRANSACTION COMPLETED."
         :image="BITLAYER_IMAGE"
+        points="8"
       >
         <Button
           class="w-full md:w-[174px]"
@@ -176,6 +178,22 @@ import BITLAYER_IMAGE from '@/assets/images/goooo-points/bitlayer.png'
           GO TO BRIDGE
         </Button>
       </TaskItem> -->
+      <TaskItem
+        title="BRIDGE $BTC FROM BINANCE TO MERLIN."
+        description="BRIDGE $BTC FROM BINANCE TO MERLIN AND RECEIVE 4 Goooo AS A REWARD FOR EACH TRANSACTION COMPLETED."
+        :image="MERLIN_IMAGE"
+        points="4"
+      >
+        <Button
+          class="w-full md:w-[174px]"
+          size="sm"
+          as="a"
+          href="https://bridge.oooo.money/?from=binance&to=merlin"
+          target="_blank"
+        >
+          GO TO BRIDGE
+        </Button>
+      </TaskItem>
     </TaskCard>
   </div>
 </template>

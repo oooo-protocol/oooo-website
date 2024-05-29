@@ -19,7 +19,7 @@ const { wallet } = useWallet()
 
 <template>
   <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-[24px] md:gap-[40px] px-[16px] py-[26px] min-h-[110px] rounded-[2px] border border-[#28292a]">
-    <div class="flex md:items-center">
+    <div class="flex items-start md:items-center">
       <Icon
         v-if="icon"
         class="shrink-0 mr-[16px] text-[44px]"
@@ -39,7 +39,7 @@ const { wallet } = useWallet()
             class="text-[#abeec4]"
             v-if="points"
           >
-            +{{ points }} POINTS
+            +{{ points }} Goooo
           </span>
         </div>
         <slot name="description">

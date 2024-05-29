@@ -58,16 +58,15 @@ onMounted(async () => {
 
 <template>
   <div class="oooo-model" />
-  <div class="relative flex flex-col min-h-[calc(100%-208px)] px-[24px] md:px-[48px] xl:px-[120px]">
-    <h2 class="relative z-[1] box-content py-[32px] md:pt-[40px] md:pb-[120px] xl:pt-[32px] xl:pb-[80px] xl:pr-[540px] text-[24px] md:text-[32px] xl:text-[48px] leading-none font-light uppercase max-w-[549px] xl:max-w-[968px]">
+  <div class="relative flex flex-col min-h-[calc(100vh-208px)] px-[24px] md:px-[48px] xl:px-[120px]">
+    <h2 class="relative z-[1] box-content pt-[16px] pb-[32px] md:pt-[20px] md:pb-[120px] xl:pt-[16px] xl:pb-[100px] text-[24px] md:text-[32px] xl:text-[52px] leading-[1.1] font-light xl:max-w-[1100px]">
       <b>
         <a
-          class="lowercase"
           href="https://discord.gg/ooooprotocol"
           target="_blank"
         >oooo</a>
       </b>
-      IS THE FIRST MODULAR OMNICHAIN INTEROPERABILITY PROTOCOL SUPPORTING <b>BITCOIN ECOSYSTEM</b>.
+      is the first modular omnichain interoperability protocol supporting <b>bitcoin ecosystem</b>.
     </h2>
     <div class="relative grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 gap-y-[24px] md:gap-y-[80px] -mx-[24px] mb-auto pb-[52px] md:pb-[173px] xl:pb-[327px] px-[24px] xl:w-[1300px] normal-case">
       <div
@@ -87,7 +86,7 @@ onMounted(async () => {
         </p>
       </div>
     </div>
-    <div class="relative xl:flex xl:items-center xl:gap-[275px]">
+    <div class="relative xl:flex xl:items-center xl:gap-[250px]">
       <Icon
         class="mb-[32px] md:mb-[0] oooo-logo xl:shrink-0"
         name="a-OOOO2024"
