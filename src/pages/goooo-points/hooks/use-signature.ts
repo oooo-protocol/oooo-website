@@ -1,6 +1,6 @@
-import { useWallet } from '@/composables/hooks/use-wallet'
 import { uuid } from 'oooo-components/lib/utils'
 import { storage } from '@preflower/utils'
+import { useEVMWallet } from 'oooo-components/oooo-wallet'
 
 const SIGNATURE_STORAGE_KEY = '__oooo-signature'
 
@@ -11,7 +11,7 @@ interface SignatureStorage {
 }
 
 export const useSignatureProvider = () => {
-  const { wallet, sign, onLogout } = useWallet()
+  const { address, getWalletInstance, onLogout } = useEVMWallet()
 
   const signatureStorage = ref(storage.local.get<SignatureStorage>(SIGNATURE_STORAGE_KEY))
   const signature = computed(() => signatureStorage.value?.signature)
@@ -28,18 +28,20 @@ Nonce: ${uuid()}`
   }
 
   const onSign = async () => {
-    if (!wallet.value) return
+    if (address.value == null) return
 
     try {
+      const instance = getWalletInstance()
+
       const _signContent = generateSignContent()
-      const _signature = await sign(_signContent, wallet.value.address)
+      const _signature = await instance.sign(_signContent, address.value)
       signatureStorage.value = {
-        walletAddress: wallet.value.address,
+        walletAddress: address.value,
         signature: _signature,
         signContent: _signContent
       }
       storage.local.set(SIGNATURE_STORAGE_KEY, signatureStorage.value)
-    } catch {
+    } catch (e) {
       void onLogout()
     }
   }
@@ -49,8 +51,8 @@ Nonce: ${uuid()}`
     storage.local.remove(SIGNATURE_STORAGE_KEY)
   }
 
-  watch(wallet, async (wallet) => {
-    if (wallet == null) {
+  watch(address, async (address) => {
+    if (address == null) {
       onSignout()
       return
     }
@@ -58,7 +60,7 @@ Nonce: ${uuid()}`
       await onSign()
       return
     }
-    if (wallet.address !== signatureStorage.value.walletAddress) {
+    if (address !== signatureStorage.value.walletAddress) {
       onSignout()
       await onSign()
     }

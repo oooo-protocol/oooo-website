@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Icon from 'oooo-components/ui/Icon.vue'
 import WalletConnectButton from '@/components/WalletConnectButton.vue'
-import { useWallet } from '@/composables/hooks/use-wallet'
+import { useEVMWallet } from 'oooo-components/oooo-wallet'
 
 defineOptions({ name: 'TaskItem' })
 
@@ -14,7 +14,7 @@ defineProps<{
   succeed?: boolean
 }>()
 
-const { wallet } = useWallet()
+const { address } = useEVMWallet()
 </script>
 
 <template>
@@ -54,7 +54,7 @@ const { wallet } = useWallet()
     </div>
     <div class="shrink-0 flex justify-end gap-[4px]">
       <template
-        v-if="wallet"
+        v-if="address"
       >
         <Icon
           v-if="succeed"

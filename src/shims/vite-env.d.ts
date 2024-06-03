@@ -2,5 +2,7 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
+  readonly VITE_NETWORK: string
   readonly VITE_REQUEST_DOMAIN: string
+  readonly VITE_BRIDGE_DOMAIN: string
 }

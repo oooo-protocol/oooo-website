@@ -1,24 +1,24 @@
 <script setup lang="ts">
 import Icon from 'oooo-components/ui/Icon.vue'
 import PointsRecord from './PointsRecord.vue'
-import { useWallet } from '@/composables/hooks/use-wallet'
-import { formatHashWithEllipsis } from '@/lib/utils'
+import { formatHashWithEllipsis } from 'oooo-components/lib/utils'
 import { useQuery } from '@tanstack/vue-query'
 import { retrieveAccountInfo } from '@/request/api/task'
 import { useSignature } from '../../hooks/use-signature'
 import WalletConnectButton from '@/components/WalletConnectButton.vue'
+import { useEVMWallet } from 'oooo-components/oooo-wallet'
 
 defineOptions({ name: 'YourAccount' })
 
 const isOpenPointsRecord = ref(false)
-const { wallet } = useWallet()
+const { address } = useEVMWallet()
 const { signature, signContent } = useSignature()
 
-const enabled = computed(() => wallet.value !== undefined && signature.value !== undefined)
+const enabled = computed(() => address.value !== undefined && signature.value !== undefined)
 const { data: account } = useQuery({
-  queryKey: ['/point/account', wallet.value],
+  queryKey: ['/point/account', address.value],
   queryFn: async () => await retrieveAccountInfo({
-    walletAddress: wallet.value!.address,
+    walletAddress: address.value!,
     signature: signature.value!,
     signContent: signContent.value
   }),
@@ -34,14 +34,14 @@ const { data: account } = useQuery({
       </h3>
       <div
         class="flex items-center text-[#787878]"
-        v-if="wallet"
+        v-if="address"
       >
         <Icon
           class="md:text-[20px]"
           name="wallet"
         />
         <p class="text-[13px] md:text-base ml-[10px] tracking-[0.8px]">
-          {{ formatHashWithEllipsis(wallet.address) }}
+          {{ formatHashWithEllipsis(address) }}
         </p>
         <div class="mx-[20px] md:mx-[30px] w-[1px] h-[20px] bg-[#787878]" />
         <p
@@ -60,7 +60,7 @@ const { data: account } = useQuery({
     </div>
     <div
       class="md:ml-auto flex md:text-right"
-      v-if="wallet"
+      v-if="address"
     >
       <div>
         <p class="text-[14px] tracking-[0.7px]">

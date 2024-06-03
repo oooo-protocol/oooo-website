@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import { Button } from 'oooo-components/ui/button'
-import { createFunctionCall } from '@/components/function-call'
-import WalletConnectModal from '@/components/wallet-connect/WalletConnectModal.vue'
+import { createFuncall } from 'vue-funcall'
+import { NETWORK, WALLET_TYPE, WalletConnectModal } from 'oooo-components/oooo-wallet'
 
-const onConnect = async () => {
-  createFunctionCall(WalletConnectModal)
+const onClickConnect = () => {
+  createFuncall(WalletConnectModal, {
+    modelValue: true,
+    type: WALLET_TYPE.ETHEREUM,
+    network: import.meta.env.VITE_NETWORK as NETWORK
+  })
 }
 </script>
 
@@ -12,7 +16,7 @@ const onConnect = async () => {
   <Button
     class="w-[196px] tracking-[1px] text-[#bce4cd] select-none"
     variant="outline"
-    @click="onConnect"
+    @click="onClickConnect"
   >
     CONNECT WALLET
   </Button>

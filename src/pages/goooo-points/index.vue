@@ -6,7 +6,7 @@ import { ScrollNavProvider, ScrollNavItem, ScrollNavContent } from './components
 import { useSignatureProvider } from './hooks/use-signature'
 import { getArrayFirst } from '@preflower/utils'
 import { createInvitationRelationship } from '@/request/api/task'
-import { useWallet } from '@/composables/hooks/use-wallet'
+import { useEVMWallet } from 'oooo-components/oooo-wallet'
 
 const route = useRoute()
 
@@ -24,14 +24,14 @@ const navs = [
   // }
 ]
 
-const { wallet } = useWallet()
+const { address } = useEVMWallet()
 const { signature, signContent } = useSignatureProvider()
 const inviteCode = getArrayFirst(route.query.inviteCode)
 
 watch(signature, (signature) => {
-  if (signature == null || inviteCode == null || wallet.value == null) return
+  if (signature == null || inviteCode == null || address.value == null) return
   void createInvitationRelationship({
-    walletAddress: wallet.value.address,
+    walletAddress: address.value,
     signature,
     signContent: signContent.value,
     inviteCode

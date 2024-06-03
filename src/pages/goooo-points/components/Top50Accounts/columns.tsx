@@ -1,5 +1,5 @@
 import { ColumnDef } from '@tanstack/vue-table'
-import { formatHashWithEllipsis } from '@/lib/utils'
+import { formatHashWithEllipsis } from 'oooo-components/lib/utils'
 import { AccountListItem } from '@/request/api/task'
 import Icon from 'oooo-components/ui/Icon.vue'
 

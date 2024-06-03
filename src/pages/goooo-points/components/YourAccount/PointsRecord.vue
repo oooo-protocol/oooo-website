@@ -5,22 +5,22 @@ import PaginationPro from '@/components/PaginationPro.vue'
 import { columns } from './columns'
 import { useQuery, keepPreviousData } from '@tanstack/vue-query'
 import { retrieveAccountPointLogs } from '@/request/api/task'
-import { useWallet } from '@/composables/hooks/use-wallet'
 import { useSignature } from '../../hooks/use-signature'
+import { useEVMWallet } from 'oooo-components/oooo-wallet'
 
 const open = defineModel<boolean>()
 
 const pageNumber = ref(1)
 
-const { wallet } = useWallet()
+const { address } = useEVMWallet()
 const { signature, signContent } = useSignature()
 
-const enabled = computed(() => wallet.value !== undefined && signature.value !== undefined)
+const enabled = computed(() => address.value !== undefined && signature.value !== undefined)
 const { isPending, data } = useQuery({
   queryKey: ['/point/account/log', pageNumber],
   queryFn: async () => {
     const { list, totalCount } = await retrieveAccountPointLogs({
-      walletAddress: wallet.value!.address,
+      walletAddress: address.value!,
       signature: signature.value!,
       signContent: signContent.value,
       pagesize: 10,

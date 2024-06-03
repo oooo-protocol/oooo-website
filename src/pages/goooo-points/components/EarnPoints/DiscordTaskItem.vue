@@ -7,9 +7,9 @@ import TaskItem from './TaskItem.vue'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from 'oooo-components/ui/dialog'
 import { useToast } from 'oooo-components/ui/toast'
 import { invokeAuthorizationLink } from '@/lib/utils'
-import { useWallet } from '@/composables/hooks/use-wallet'
 import { useSignature } from '../../hooks/use-signature'
 import { useCreatePointConfetti } from '../../hooks/use-create-point-confetti'
+import { useEVMWallet } from 'oooo-components/oooo-wallet'
 
 defineOptions({ name: 'TwitterTaskItem' })
 
@@ -18,24 +18,24 @@ const { toast } = useToast()
 const isOpenFollowDialog = ref(false)
 const isOpenErrorDialog = ref(false)
 
-const { wallet } = useWallet()
+const { address } = useEVMWallet()
 const { signature, signContent } = useSignature()
 const createPointConfetti = useCreatePointConfetti()
 
-const disabled = computed(() => wallet.value == null || signature.value == null)
+const disabled = computed(() => address.value == null || signature.value == null)
 
-watch(() => [wallet.value, signature.value], ([wallet, signature]) => {
+watch(() => [address.value, signature.value], ([wallet, signature]) => {
   if (disabled.value) return
   void check()
 })
 
 const { isPending: isChecking, data: succeed, mutateAsync: check } = useMutation({
   mutationFn: async () => {
-    if (wallet.value == null || signature.value == null) {
+    if (address.value == null || signature.value == null) {
       throw new Error('WALLET OR SIGNATURE IS NOT AVAILABLE, PLEASE RE-CONNECT WALLET')
     }
     return await isFollowedDiscord({
-      walletAddress: wallet.value.address,
+      walletAddress: address.value,
       signature: signature.value,
       signContent: signContent.value
     })
@@ -47,11 +47,11 @@ const { isPending: isChecking, data: succeed, mutateAsync: check } = useMutation
 
 const { isPending: loading, mutate } = useMutation({
   mutationFn: async () => {
-    if (wallet.value == null || signature.value == null) {
+    if (address.value == null || signature.value == null) {
       throw new Error('WALLET OR SIGNATURE IS NOT AVAILABLE, PLEASE RE-CONNECT WALLET')
     }
     const url = await getDiscordAuthorizationUrl({
-      walletAddress: wallet.value.address,
+      walletAddress: address.value,
       signature: signature.value,
       signContent: signContent.value
     })
