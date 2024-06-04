@@ -2,10 +2,10 @@ import { createFuncall } from 'vue-funcall'
 import ConfettiDialog from '../components/ConfettiDialog.vue'
 
 export const useCreatePointConfetti = () => {
-  const create = (point: string) => {
+  const create = (message: string) => {
     createFuncall(ConfettiDialog, {
       title: 'EXCENLLENT',
-      description: `GET ${point} POINTS`,
+      description: message,
       open: true
     })
   }

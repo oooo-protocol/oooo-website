@@ -60,7 +60,7 @@ const { mutate } = useMutation({
       isOpenFollowDialog.value = false
       const succeed = await check()
       if (succeed) {
-        createPointConfetti('10')
+        createPointConfetti('GET 10 POINTS')
       }
     } else {
       isOpenErrorDialog.value = true

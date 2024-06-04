@@ -6,6 +6,8 @@ import { Button } from 'oooo-components/ui/button'
 
 // import MoreSoon from './MoreSoon.vue'
 
+import Airdrop from './Airdrop/index.vue'
+
 import TaskCard from './TaskCard.vue'
 import TaskItem from './TaskItem.vue'
 // import TwitterTaskItem from './TwitterTaskItem.vue'
@@ -195,6 +197,7 @@ import MERLIN_IMAGE from '@/assets/images/goooo-points/merlin.png'
         </Button>
       </TaskItem>
     </TaskCard>
+    <Airdrop />
   </div>
 </template>
 
