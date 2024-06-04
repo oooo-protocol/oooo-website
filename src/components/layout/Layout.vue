@@ -64,7 +64,7 @@ const menus = [
   <AppHeader class="justify-between">
     <AppNav :menus="menus" />
     <a
-      class="hidden md:flex gap-[8px] md:ml-auto text-[14px] -tracking-tighter hover:text-[#bce4cd]"
+      class="hidden md:flex gap-[8px] md:ml-auto -tracking-tighter hover:text-[#bce4cd]"
       href="https://bridge.oooo.money"
     >
       <Icon
@@ -74,7 +74,7 @@ const menus = [
       BRIDGE
     </a>
     <RouterLink
-      class="flex items-center gap-[8px] hover:text-[#bce4cd]"
+      class="flex items-center gap-[8px] -tracking-tighter hover:text-[#bce4cd]"
       to="/goooo"
     >
       <Icon

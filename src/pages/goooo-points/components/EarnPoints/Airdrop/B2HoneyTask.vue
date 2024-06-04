@@ -7,11 +7,14 @@ import { Button } from 'oooo-components/ui/button'
 import { useQuery, useQueryClient } from '@tanstack/vue-query'
 import { useCreatePointConfetti } from '@/pages/goooo-points/hooks/use-create-point-confetti'
 import { NETWORK } from '@/entities/chain'
+import { useToast } from 'oooo-components/ui/toast'
 
 const createPointConfetti = useCreatePointConfetti()
 
 const { address, getWalletInstance } = useEVMWallet()
 const queryClient = useQueryClient()
+
+const { toast } = useToast()
 
 const isChecking = ref(false)
 
@@ -68,9 +71,9 @@ const config = import.meta.env.VITE_NETWORK === NETWORK.LIVENET
 const onMint = async () => {
   loading.value = true
   const instance = getWalletInstance()
-  await instance.switchToChain(config.CHAIN_CONFIG)
   const provider = new ethers.BrowserProvider(instance.provider)
   try {
+    await instance.switchToChain(config.CHAIN_CONFIG)
     const signer = await provider.getSigner()
     const contract = new ethers.Contract(config.CONTRACT_ADDRESS, CONTRACT_ABI, signer)
     const gasPrice = (await provider.getFeeData()).gasPrice
@@ -86,6 +89,10 @@ const onMint = async () => {
         true
       )
     }
+  } catch (e) {
+    toast({
+      description: (e as Error).message
+    })
   } finally {
     loading.value = false
     provider.destroy()
