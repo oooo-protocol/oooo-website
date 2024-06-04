@@ -41,7 +41,7 @@ const config = import.meta.env.VITE_NETWORK === NETWORK.LIVENET
     CONTRACT_ADDRESS: '0xCC5AA43f4Ef7A48f95b54e0f1C53265b5b3e862A',
     CHAIN_CONFIG: {
       chainId: '0xdf',
-      chainName: 'B² Mainnet',
+      chainName: 'B2 Mainnet',
       rpcUrls: ['https://rpc.bsquared.network', 'https://b2-mainnet.alt.technology'],
       nativeCurrency: {
         name: 'BTC',
