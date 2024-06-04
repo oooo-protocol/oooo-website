@@ -3,7 +3,6 @@ import AppHeader from 'oooo-components/layout/AppHeader.vue'
 import AppNav from 'oooo-components/layout/AppNav.vue'
 import AppFooter from 'oooo-components/layout/AppFooter.vue'
 import Icon from 'oooo-components/ui/Icon.vue'
-import { buttonVariants } from 'oooo-components/ui/button'
 import WalletSelect from './WalletSelect.vue'
 
 const route = useRoute()
@@ -62,21 +61,24 @@ const menus = [
 </script>
 
 <template>
-  <AppHeader>
+  <AppHeader class="justify-between">
     <AppNav :menus="menus" />
     <a
-      class="hidden md:block md:ml-auto text-[14px] -tracking-tighter text-[#bce4cd] hover:text-[#7c9486]"
+      class="hidden md:flex gap-[8px] md:ml-auto text-[14px] -tracking-tighter hover:text-[#bce4cd]"
       href="https://bridge.oooo.money"
     >
+      <Icon
+        class="text-[22px] text-[#ff961e]"
+        name="bridge"
+      />
       BRIDGE
     </a>
     <RouterLink
-      class="ml-auto md:ml-0 gap-[8px] text-[#ff961e] hover:text-[#ff961e]"
-      :class="buttonVariants({ variant: 'ghost' })"
+      class="flex items-center gap-[8px] hover:text-[#bce4cd]"
       to="/goooo"
     >
       <Icon
-        class="text-[20px]"
+        class="text-[20px] text-[#ff961e]"
         name="Goooo"
       />
       Goooo

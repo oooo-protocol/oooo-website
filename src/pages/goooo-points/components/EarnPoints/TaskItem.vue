@@ -30,26 +30,24 @@ const { address } = useEVMWallet()
         class="shrink-0 mr-[16px] w-[44px]"
         :src="image"
       >
-      <div>
-        <div class="flex flex-col md:flex-row md:items-center gap-[8px] md:gap-[30px] text-[14px] font-medium -tracking-tighter">
-          <slot name="title">
-            {{ title }}
-          </slot>
-          <span
-            class="text-[#abeec4]"
-            v-if="points"
-          >
-            +{{ points }} Goooo
-          </span>
-        </div>
+      <div class="text-[14px] font-medium -tracking-tighter">
+        <slot name="title">
+          {{ title }}
+        </slot>
         <slot name="description">
           <p
             v-if="description"
-            class="mt-[8px] text-[12px] font-light text-[#787878] tracking-[0.6px]"
+            class="mt-[4px] text-[12px] font-light text-[#787878] tracking-[0.6px]"
           >
             {{ description }}
           </p>
         </slot>
+        <p
+          class="mt-[8px] text-[#abeec4]"
+          v-if="points"
+        >
+          +{{ points }} Goooo
+        </p>
       </div>
     </div>
     <div class="shrink-0 flex justify-end gap-[4px]">
