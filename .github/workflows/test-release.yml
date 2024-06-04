@@ -8,6 +8,7 @@ on:
 
 env:
   CI: true
+
 jobs:
   release:
     timeout-minutes: 15
