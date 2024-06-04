@@ -38,7 +38,7 @@ const CONTRACT_ABI = [
 
 const config = import.meta.env.VITE_NETWORK === NETWORK.LIVENET
   ? {
-    CONTRACT_ADDRESS: '0xD612AD3Cc001950822f1b6701AFA282cC0bE7141',
+    CONTRACT_ADDRESS: '0xCC5AA43f4Ef7A48f95b54e0f1C53265b5b3e862A',
     CHAIN_CONFIG: {
       chainId: '0xdf',
       chainName: 'B² Mainnet',
