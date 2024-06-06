@@ -23,3 +23,7 @@ pnpm-lock.yaml
 *.njsproj
 *.sln
 *.sw?
+
+# pnpm cache
+.pnpm-store
+.npmrc
