@@ -10,6 +10,9 @@ import Airdrop from './Airdrop/index.vue'
 
 import TaskCard from './TaskCard.vue'
 import TaskItem from './TaskItem.vue'
+
+import RootStockBridgeTask from './Tasks/RootstockBridgeTask.vue'
+
 // import TwitterTaskItem from './TwitterTaskItem.vue'
 // import DiscordTaskItem from './DiscordTaskItem.vue'
 
@@ -150,6 +153,7 @@ import MERLIN_IMAGE from '@/assets/images/goooo-points/merlin.png'
       title="BRIDGE TO EARN"
       :img="BRIDGE_TO_EARN_IMAGE"
     >
+      <RootStockBridgeTask />
       <TaskItem
         title="BRIDGE $BTC FROM ANY CHAIN TO BITLAYER."
         description="BRIDGE $BTC FROM ANY CHAIN TO BITLAYER AND RECEIVE 8 Goooo AS A REWARD FOR EACH TRANSACTION COMPLETED."
