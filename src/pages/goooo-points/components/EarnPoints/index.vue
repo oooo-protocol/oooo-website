@@ -145,7 +145,6 @@ import MERLIN_IMAGE from '@/assets/images/goooo-points/merlin.png'
         </Button>
       </TaskItem>
     </TaskCard> -->
-    <Airdrop />
     <TaskCard
       title="BRIDGE TO EARN"
       :img="BRIDGE_TO_EARN_IMAGE"
@@ -198,6 +197,7 @@ import MERLIN_IMAGE from '@/assets/images/goooo-points/merlin.png'
         </Button>
       </TaskItem>
     </TaskCard>
+    <Airdrop />
   </div>
 </template>
 
