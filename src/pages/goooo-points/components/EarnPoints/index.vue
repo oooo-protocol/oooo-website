@@ -12,6 +12,8 @@ import TaskCard from './TaskCard.vue'
 import TaskItem from './TaskItem.vue'
 
 import RootStockBridgeTask from './Tasks/RootstockBridgeTask.vue'
+import B2BridgeTask from './Tasks/B2BridgeTask.vue'
+import BinanceMerlinBridgeTask from './Tasks/BinanceMerlinBridgeTask.vue'
 
 // import TwitterTaskItem from './TwitterTaskItem.vue'
 // import DiscordTaskItem from './DiscordTaskItem.vue'
@@ -22,7 +24,6 @@ import BRIDGE_TO_EARN_IMAGE from '@/assets/images/goooo-points/bridge.png'
 
 import BITLAYER_IMAGE from '@/assets/images/goooo-points/bitlayer.png'
 // import BEVM_IMAGE from '@/assets/images/goooo-points/bevm.png'
-import MERLIN_IMAGE from '@/assets/images/goooo-points/merlin.png'
 
 // import { useWallet } from '@/composables/hooks/use-wallet'
 // import { useSignature } from '../../hooks/use-signature'
@@ -153,6 +154,7 @@ import MERLIN_IMAGE from '@/assets/images/goooo-points/merlin.png'
       title="BRIDGE TO EARN"
       :img="BRIDGE_TO_EARN_IMAGE"
     >
+      <B2BridgeTask />
       <RootStockBridgeTask />
       <TaskItem
         title="BRIDGE $BTC FROM ANY CHAIN TO BITLAYER."
@@ -185,22 +187,7 @@ import MERLIN_IMAGE from '@/assets/images/goooo-points/merlin.png'
           GO TO BRIDGE
         </Button>
       </TaskItem> -->
-      <TaskItem
-        title="BRIDGE $BTC FROM BINANCE TO MERLIN."
-        description="BRIDGE $BTC FROM BINANCE TO MERLIN AND RECEIVE 4 Goooo AS A REWARD FOR EACH TRANSACTION COMPLETED."
-        :image="MERLIN_IMAGE"
-        points="4"
-      >
-        <Button
-          class="w-full md:w-[174px]"
-          size="sm"
-          as="a"
-          href="https://bridge.oooo.money/?from=binance&to=merlin"
-          target="_blank"
-        >
-          GO TO BRIDGE
-        </Button>
-      </TaskItem>
+      <BinanceMerlinBridgeTask />
     </TaskCard>
   </div>
 </template>
