@@ -9,7 +9,7 @@ import TaskItem from '../TaskItem.vue'
 <template>
   <TaskItem
     title="BRIDGE $BTC FROM BINANCE TO MERLIN."
-    description="BRIDGE $BTC FROM BINANCE TO MERLIN AND RECEIVE 4 Goooo AS A REWARD FOR EACH TRANSACTION COMPLETED."
+    description="BRIDGE $BTC FROM BINANCE TO MERLIN AND RECEIVE 8 Goooo AS A REWARD FOR EACH TRANSACTION COMPLETED."
     :image="MERLIN_IMAGE"
     points="8"
   >
