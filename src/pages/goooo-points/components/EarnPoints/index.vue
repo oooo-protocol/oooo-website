@@ -1,6 +1,5 @@
 <script setup lang="ts">
 // import copy from 'copy-text-to-clipboard'
-import { Button } from 'oooo-components/ui/button'
 // import Icon from 'oooo-components/ui/Icon.vue'
 // import { useToast } from 'oooo-components/ui/toast'
 
@@ -9,7 +8,6 @@ import { Button } from 'oooo-components/ui/button'
 import Airdrop from './Airdrop/index.vue'
 
 import TaskCard from './TaskCard.vue'
-import TaskItem from './TaskItem.vue'
 
 import RootStockBridgeTask from './Tasks/RootstockBridgeTask.vue'
 import B2BridgeTask from './Tasks/B2BridgeTask.vue'
@@ -22,7 +20,6 @@ import BinanceMerlinBridgeTask from './Tasks/BinanceMerlinBridgeTask.vue'
 // import INVITE_TO_EARN_IMAGE from '@/assets/images/goooo-points/invite.png'
 import BRIDGE_TO_EARN_IMAGE from '@/assets/images/goooo-points/bridge.png'
 
-import BITLAYER_IMAGE from '@/assets/images/goooo-points/bitlayer.png'
 // import BEVM_IMAGE from '@/assets/images/goooo-points/bevm.png'
 
 // import { useWallet } from '@/composables/hooks/use-wallet'
@@ -156,22 +153,6 @@ import BITLAYER_IMAGE from '@/assets/images/goooo-points/bitlayer.png'
     >
       <B2BridgeTask />
       <RootStockBridgeTask />
-      <TaskItem
-        title="BRIDGE $BTC FROM ANY CHAIN TO BITLAYER."
-        description="BRIDGE $BTC FROM ANY CHAIN TO BITLAYER AND RECEIVE 8 Goooo AS A REWARD FOR EACH TRANSACTION COMPLETED."
-        :image="BITLAYER_IMAGE"
-        points="8"
-      >
-        <Button
-          class="w-full md:w-[174px]"
-          size="sm"
-          as="a"
-          href="https://bridge.oooo.money/?from=merlin&to=bitlayer"
-          target="_blank"
-        >
-          GO TO BRIDGE
-        </Button>
-      </TaskItem>
       <!-- <TaskItem
         title="BRIDGE $BTC FROM BINANCE TO BEVM."
         description="BRIDGE $BTC FROM BINANCE TO BEVM AND RECEIVE 4 Goooo AS A REWARD FOR EACH TRANSACTION COMPLETED."
