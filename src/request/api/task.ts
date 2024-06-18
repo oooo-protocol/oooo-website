@@ -122,3 +122,23 @@ export const retrieveAccountPointLogs = async (data: SignatureRequest & Paginati
     data
   })
 }
+
+export interface VerifyTaskRequest {
+  taskId: string
+}
+
+export const verifyTask = async (data: SignatureRequest & VerifyTaskRequest) => {
+  return await axios<boolean>({
+    url: '/activity/transaction/verify',
+    method: 'POST',
+    data
+  })
+}
+
+export const retrieveTaskStatus = async (data: SignatureRequest & VerifyTaskRequest) => {
+  return await axios<boolean>({
+    url: '/activity/task/status',
+    method: 'POST',
+    data
+  })
+}

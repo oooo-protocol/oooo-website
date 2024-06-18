@@ -50,7 +50,7 @@ const { address } = useEVMWallet()
         </p>
       </div>
     </div>
-    <div class="shrink-0 flex justify-end gap-[4px]">
+    <div class="shrink-0 flex flex-col justify-end gap-[8px]">
       <template
         v-if="address"
       >
