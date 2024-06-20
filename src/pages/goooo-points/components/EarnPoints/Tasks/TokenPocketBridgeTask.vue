@@ -50,7 +50,7 @@ const { isPending: verifing, mutate } = useMutation({
   },
   onSuccess: () => {
     queryClient.setQueryData(['/activity/task/status', address, signature], true)
-    createPointConfetti('VERIFIED SUCCESSFULLY ｜ GET 8 Goooo')
+    createPointConfetti('GET 8 Goooo', 'VERIFIED SUCCESSFULLY')
   },
   onError: (e) => {
     toast({ description: e.message })
