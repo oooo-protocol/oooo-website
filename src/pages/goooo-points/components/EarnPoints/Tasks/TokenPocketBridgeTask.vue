@@ -98,7 +98,7 @@ const onVerifyClick = () => {
       @click="onVerifyClick"
       :loading="isChecking || verifing"
     >
-      Verify
+      VERIFY
     </Button>
   </TaskItem>
 </template>
