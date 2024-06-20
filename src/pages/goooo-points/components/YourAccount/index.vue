@@ -16,7 +16,7 @@ const { signature, signContent } = useSignature()
 
 const enabled = computed(() => address.value !== undefined && signature.value !== undefined)
 const { data: account } = useQuery({
-  queryKey: ['/point/account', address.value],
+  queryKey: ['/point/account', address],
   queryFn: async () => await retrieveAccountInfo({
     walletAddress: address.value!,
     signature: signature.value!,

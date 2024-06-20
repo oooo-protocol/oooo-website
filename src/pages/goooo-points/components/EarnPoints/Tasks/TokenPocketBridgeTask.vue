@@ -48,9 +48,10 @@ const { isPending: verifing, mutate } = useMutation({
       signContent: signContent.value
     })
   },
-  onSuccess: () => {
+  onSuccess: async () => {
     queryClient.setQueryData(['/activity/task/status', address, signature], true)
     createPointConfetti('GET 8 Goooo', 'VERIFIED SUCCESSFULLY')
+    await queryClient.invalidateQueries({ queryKey: ['/point/account', address.value] })
   },
   onError: (e) => {
     toast({ description: e.message })
