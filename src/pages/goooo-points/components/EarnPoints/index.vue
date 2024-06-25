@@ -9,7 +9,7 @@ import Airdrop from './Airdrop/index.vue'
 
 import TaskCard from './TaskCard.vue'
 
-import RootStockBridgeTask from './Tasks/RootstockBridgeTask.vue'
+// import RootStockBridgeTask from './Tasks/RootstockBridgeTask.vue'
 import B2BridgeTask from './Tasks/B2BridgeTask.vue'
 import BinanceMerlinBridgeTask from './Tasks/BinanceMerlinBridgeTask.vue'
 import TokenPocketBridgeTask from './Tasks/TokenPocketBridgeTask.vue'
@@ -154,7 +154,7 @@ import BRIDGE_TO_EARN_IMAGE from '@/assets/images/goooo-points/bridge.png'
     >
       <TokenPocketBridgeTask />
       <B2BridgeTask />
-      <RootStockBridgeTask />
+      <!-- <RootStockBridgeTask /> -->
       <!-- <TaskItem
         title="BRIDGE $BTC FROM BINANCE TO BEVM."
         description="BRIDGE $BTC FROM BINANCE TO BEVM AND RECEIVE 4 Goooo AS A REWARD FOR EACH TRANSACTION COMPLETED."
