@@ -17,7 +17,7 @@ import TaskItem from '../TaskItem.vue'
       class="w-full md:w-[174px]"
       size="sm"
       as="a"
-      href="https://bridge.oooo.money/?token=BTC&from=merlin&to=bsquared"
+      href="https://bridge.oooo.money/?token=BTC&from=binance_pay&to=bsquared"
       target="_blank"
     >
       GO TO BRIDGE
