@@ -74,7 +74,7 @@ const { mutate } = useMutation({
 
 <template>
   <TaskItem
-    points="10"
+    hint="+10 Goooo"
     icon="twitter2"
     :succeed="succeed"
   >

@@ -74,7 +74,7 @@ const { isPending: loading, mutate } = useMutation({
 
 <template>
   <TaskItem
-    points="10"
+    hint="+10 Goooo"
     icon="discord1"
     :succeed="succeed"
   >

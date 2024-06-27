@@ -9,8 +9,8 @@ defineProps<{
   icon?: string
   image?: string
   title?: string
-  points?: string
   description?: string
+  hint?: string
   succeed?: boolean
 }>()
 
@@ -44,9 +44,9 @@ const { address } = useEVMWallet()
         </slot>
         <p
           class="mt-[8px] text-[#abeec4]"
-          v-if="points"
+          v-if="hint"
         >
-          +{{ points }} Goooo
+          {{ hint }}
         </p>
       </div>
     </div>

@@ -11,7 +11,7 @@ import TaskItem from '../TaskItem.vue'
     title="BRIDGE $BTC FROM ANY CHAIN TO ROOTSTOCK."
     description="BRIDGE $BTC FROM ANY CHAIN TO ROOTSTOCK AND RECEIVE 8 Goooo AS A REWARD FOR EACH TRANSACTION COMPLETED."
     :image="ROOTSTOCK_IMAGE"
-    points="8"
+    hint="+8 Goooo"
   >
     <Button
       class="w-full md:w-[174px]"
