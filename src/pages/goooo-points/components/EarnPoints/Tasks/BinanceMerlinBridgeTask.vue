@@ -11,7 +11,7 @@ import TaskItem from '../TaskItem.vue'
     title="BRIDGE $BTC FROM BINANCE TO MERLIN."
     description="BRIDGE $BTC FROM BINANCE TO MERLIN AND RECEIVE 8 Goooo AS A REWARD FOR EACH TRANSACTION COMPLETED."
     :image="MERLIN_IMAGE"
-    points="8"
+    hint="+8 Goooo"
   >
     <Button
       class="w-full md:w-[174px]"

@@ -82,7 +82,7 @@ const onVerifyClick = () => {
     description="USE TOKENPOCKET WALLET TO COMPLETE A CROSS-CHAIN TRANSACTION ON ANY CHAIN AND EARN Goooo POINTS."
     :image="TOKEN_POCKET_IMAGE"
     :succeed="succeed"
-    points="8"
+    hint="+8 Goooo"
   >
     <Button
       class="w-full md:w-[174px]"
