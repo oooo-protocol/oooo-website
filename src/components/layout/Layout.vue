@@ -3,7 +3,6 @@ import AppHeader from 'oooo-components/layout/AppHeader.vue'
 import AppNav from 'oooo-components/layout/AppNav.vue'
 import AppFooter from 'oooo-components/layout/AppFooter.vue'
 import Icon from 'oooo-components/ui/Icon.vue'
-import WalletSelect from './WalletSelect.vue'
 
 const route = useRoute()
 
@@ -73,17 +72,16 @@ const menus = [
       />
       BRIDGE
     </a>
-    <RouterLink
+    <a
       class="flex items-center gap-[8px] -tracking-tighter hover:text-[#bce4cd]"
-      to="/goooo"
+      href="https://bridge.oooo.money/goooo"
     >
       <Icon
         class="text-[20px] text-[#ff961e]"
         name="Goooo"
       />
       Goooo
-    </RouterLink>
-    <WalletSelect />
+    </a>
   </AppHeader>
   <!-- 不设置默认key，以文件名区分(Vue默认)，确保复用最外层容器 -->
   <RouterView v-slot="{ Component }">
