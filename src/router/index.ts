@@ -15,20 +15,8 @@ const routes: RouteRecordRaw[] = [
         path: '/chestchase',
         name: 'ChestChase',
         component: async () => await import('@/pages/chest-chase/index.vue')
-      }, {
-        path: '/goooo',
-        name: 'GooooPoints',
-        component: async () => await import('@/pages/goooo-points/index.vue')
       }
     ]
-  }, {
-    path: '/goooo-points/callback/twitter',
-    name: 'CallbackTwitter',
-    component: async () => await import('@/pages/goooo-points/callback/twitter.vue')
-  }, {
-    path: '/goooo-points/callback/discord',
-    name: 'CallbackDiscord',
-    component: async () => await import('@/pages/goooo-points/callback/discord.vue')
   }, {
     path: '/:pathMatch(.*)*',
     redirect: '/'
