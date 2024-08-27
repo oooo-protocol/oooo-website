@@ -9,6 +9,7 @@ import autoprefixer from 'autoprefixer'
 import nesting from 'tailwindcss/nesting'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import Components from 'unplugin-vue-components/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -33,6 +34,7 @@ export default defineConfig(({ mode }) => {
           globalsPropValue: true // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
         }
       }),
+      Components(),
       // refer: https://github.com/sxzz/unplugin-vue-macros/tree/main/packages/define-options
       DefineOptions(),
       // Inject GA to index.html

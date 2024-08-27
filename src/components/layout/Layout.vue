@@ -8,32 +8,6 @@ const route = useRoute()
 
 const menus = [
   {
-    name: 'CHEST CHASE',
-    tag: 'RouterLink',
-    attributes: {
-      to: '/chestchase'
-    },
-    closable: true
-  },
-  {
-    name: 'BRIDGE',
-    children: [
-      {
-        name: 'MAINNET',
-        tag: 'a',
-        attributes: {
-          href: 'https://bridge.oooo.money'
-        }
-      }, {
-        name: 'TESTNET',
-        tag: 'a',
-        attributes: {
-          href: 'https://testnet.bridge.oooo.money'
-        }
-      }
-    ]
-  },
-  {
     name: 'DOCS',
     tag: 'a',
     attributes: {
@@ -61,9 +35,14 @@ const menus = [
 
 <template>
   <AppHeader class="justify-between">
-    <AppNav :menus="menus" />
+    <RouterLink to="/">
+      <Icon
+        name="OOOOlogo"
+        class="text-[32px] md:text-[44px]"
+      />
+    </RouterLink>
     <a
-      class="flex gap-[8px] md:ml-auto -tracking-tighter hover:text-[#bce4cd]"
+      class="ml-auto flex gap-[8px] -tracking-tighter hover:text-[#bce4cd]"
       href="https://bridge.oooo.money"
     >
       <Icon
@@ -82,6 +61,21 @@ const menus = [
       />
       Goooo
     </a>
+    <div class="hidden md:flex gap-[40px]">
+      <component
+        class="hover:text-[#bce4cd]"
+        :is="menu.tag"
+        v-for="(menu, index) of menus"
+        :key="index"
+        v-bind="menu.attributes"
+      >
+        {{ menu.name }}
+      </component>
+    </div>
+    <AppNav
+      class="flex md:hidden"
+      :menus="menus"
+    />
   </AppHeader>
   <!-- 不设置默认key，以文件名区分(Vue默认)，确保复用最外层容器 -->
   <RouterView v-slot="{ Component }">

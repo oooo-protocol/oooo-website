@@ -9,6 +9,6 @@ import Toaster from 'oooo-components/ui/toast/Toaster.vue'
 
 <style>
 #app {
-  @apply m-auto max-w-[1920px];
+  @apply m-auto relative max-w-[1920px];
 }
 </style>
