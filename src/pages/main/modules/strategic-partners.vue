@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Vue3Marquee } from 'vue3-marquee'
+import { Marquee } from 'vue-fast-marquee'
+import 'vue-fast-marquee/style.css'
 
 import BITLAYER_IMAGE from '@/assets/images/partners/bitlayer.png'
 import BEVM_IMAGE from '@/assets/images/partners/bevm.png'
@@ -63,16 +64,15 @@ const marquee = [
 </script>
 
 <template>
-  <div class="mt-[80px] md:mt-[175px] mb-[120px]">
+  <div class="mt-[80px] md:mt-[40px] mb-[120px]">
     <h3 class="text-[28px] md:text-[48px] font-[500] text-center leading-[1]">
       STRATEGIC PARTNERS
     </h3>
     <div class="strategic-partners-marquee mt-[60px] md:mt-[120px] flex flex-col gap-[40px] md:gap-[80px]">
-      <Vue3Marquee
+      <Marquee
         v-for="(item, index) of marquee"
         :key="index"
-        :direction="index % 2 ? 'reverse' : 'normal'"
-        :duration="40"
+        :direction="index % 2 ? 'left' : 'right'"
       >
         <img
           class="mx-[20px] md:mx-[40px] h-[32px] md:h-[48px]"
@@ -80,7 +80,7 @@ const marquee = [
           :key="img"
           :src="img"
         >
-      </Vue3Marquee>
+      </Marquee>
     </div>
   </div>
 </template>

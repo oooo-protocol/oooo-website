@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const list = [
   {
@@ -68,17 +69,10 @@ const list = [
 
 onMounted(async () => {
   gsap.matchMedia().add('(max-width: 767px)', () => {
-    const sections = gsap.utils.toArray<HTMLDivElement>('.our-jounery-time')
-
-    sections.forEach((section) => {
-      gsap.to(section, {
-        scrollTrigger: {
-          trigger: section,
-          toggleClass: 'active',
-          start: 'bottom center',
-          end: 'bottom center-=154px'
-        }
-      })
+    ScrollTrigger.batch('.our-jounery-time', {
+      end: 'bottom center-=154px',
+      start: 'bottom center',
+      toggleClass: 'active'
     })
   })
 })

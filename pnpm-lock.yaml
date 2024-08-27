@@ -65,15 +65,15 @@ importers:
       vue:
         specifier: 3.4.21
         version: 3.4.21(typescript@5.4.5)
+      vue-fast-marquee:
+        specifier: ^1.0.6
+        version: 1.0.6(vue@3.4.21(typescript@5.4.5))
       vue-funcall:
         specifier: ^1.0.3
         version: 1.0.3(vue@3.4.21(typescript@5.4.5))
       vue-router:
         specifier: ^4.3.2
         version: 4.3.2(vue@3.4.21(typescript@5.4.5))
-      vue3-marquee:
-        specifier: ^4.2.1
-        version: 4.2.1(vue@3.4.21(typescript@5.4.5))
     devDependencies:
       '@types/canvas-confetti':
         specifier: ^1.6.4
@@ -3430,6 +3430,11 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
+  vue-fast-marquee@1.0.6:
+    resolution: {integrity: sha512-VMqaeuBSS3L55Q84EuLJPHZ4Zv4UVBDXmh+2hb1IBTLKt/FmurJnWVXv8BNnbQSupA4kHbPlWDLwp+kvEMOF7A==}
+    peerDependencies:
+      vue: '>=3.2.0'
+
   vue-funcall@1.0.3:
     resolution: {integrity: sha512-igRntaaH/Onv48NJaXvEgwgcEKWN5nIl58dtRnndlR5QRYtmIWEXtwmS5hAuVyaalb3QH2sy9eTV00lhLQCYfg==}
     peerDependencies:
@@ -3448,12 +3453,6 @@ packages:
     hasBin: true
     peerDependencies:
       typescript: '*'
-
-  vue3-marquee@4.2.1:
-    resolution: {integrity: sha512-3nJs2ZNnEre9qZapeRcJ8WUrhE7Z8dm9pH7jR5TYBLmGre46w6vLCht6kcNruOO/c50wuYCx73wQCaXJ0Y/Kvg==}
-    engines: {node: '>=12'}
-    peerDependencies:
-      vue: ^3.2
 
   vue@3.4.21:
     resolution: {integrity: sha512-5hjyV/jLEIKD/jYl4cavMcnzKwjMKohureP8ejn3hhEjwhWIhWeuzL2kJAjzl/WyVsgPY56Sy4Z40C3lVshxXA==}
@@ -7343,6 +7342,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  vue-fast-marquee@1.0.6(vue@3.4.21(typescript@5.4.5)):
+    dependencies:
+      vue: 3.4.21(typescript@5.4.5)
+
   vue-funcall@1.0.3(vue@3.4.21(typescript@5.4.5)):
     dependencies:
       '@preflower/vue-use': 1.1.1(vue@3.4.21(typescript@5.4.5))
@@ -7365,10 +7368,6 @@ snapshots:
       '@vue/language-core': 1.8.27(typescript@5.4.5)
       semver: 7.5.4
       typescript: 5.4.5
-
-  vue3-marquee@4.2.1(vue@3.4.21(typescript@5.4.5)):
-    dependencies:
-      vue: 3.4.21(typescript@5.4.5)
 
   vue@3.4.21(typescript@5.4.5):
     dependencies:

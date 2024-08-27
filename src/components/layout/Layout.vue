@@ -8,6 +8,24 @@ const route = useRoute()
 
 const menus = [
   {
+    name: 'BRIDGE',
+    children: [
+      {
+        name: 'MAINNET',
+        tag: 'a',
+        attributes: {
+          href: 'https://bridge.oooo.money'
+        }
+      }, {
+        name: 'TESTNET',
+        tag: 'a',
+        attributes: {
+          href: 'https://testnet.bridge.oooo.money'
+        }
+      }
+    ]
+  },
+  {
     name: 'DOCS',
     tag: 'a',
     attributes: {
@@ -62,15 +80,19 @@ const menus = [
       Goooo
     </a>
     <div class="hidden md:flex gap-[40px]">
-      <component
-        class="hover:text-[#bce4cd]"
-        :is="menu.tag"
+      <template
         v-for="(menu, index) of menus"
         :key="index"
-        v-bind="menu.attributes"
       >
-        {{ menu.name }}
-      </component>
+        <component
+          class="hover:text-[#bce4cd]"
+          :is="menu.tag"
+          v-if="menu.tag"
+          v-bind="menu.attributes"
+        >
+          {{ menu.name }}
+        </component>
+      </template>
     </div>
     <AppNav
       class="flex md:hidden"
