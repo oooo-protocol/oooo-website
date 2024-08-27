@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const list = [
   {
-    title: '1M',
+    title: '1M+',
     content: 'TRANSACTIONS'
   }, {
-    title: '0.6M',
+    title: '0.6M+',
     content: 'WALLET ADDRESSES'
   }, {
     title: '20+',

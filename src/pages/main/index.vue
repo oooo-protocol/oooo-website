@@ -53,7 +53,7 @@ watch(height, () => { ScrollTrigger.refresh() })
             as="a"
             href="https://bridge.oooo.money/goooo"
           >
-            EARN $Goooo POINTS
+            EARN Goooo POINTS
           </Button>
         </div>
       </div>

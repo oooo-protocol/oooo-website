@@ -8,7 +8,7 @@ const list = [
     subTitle: 'STAGE-1',
     content: {
       title: 'ALL-IN-ONE EXCHANGE & OMNI-PLATFORM',
-      description: 'oooo’S INITIAL FOCUS IS ON ENHANCING INTEROPERABILITY. \b\b LIQUIDITY AGGREGATION - BLOCKCHAINS + REAL-WORLD FINANCIAL SYSTEMS. \b\b USER AGGREGATION - OMNI-PLATFORM (PC+H5+TG AND MORE)'
+      description: 'oooo’S INITIAL FOCUS IS ON ENHANCING INTEROPERABILITY. \n\n LIQUIDITY AGGREGATION - BLOCKCHAINS + REAL-WORLD FINANCIAL SYSTEMS. \n\n USER AGGREGATION - OMNI-PLATFORM (PC+H5+TG AND MORE)'
     }
   }, {
     title: 'JAN',
@@ -48,7 +48,7 @@ const list = [
   }, {
     title: 'AUG',
     content: {
-      title: 'GAS STATION & STAKING'
+      title: 'GAS STATION SDKS'
     }
   }, {
     title: 'FOR DEVELOPERS',
@@ -90,7 +90,7 @@ const onScroll = (e: UIEvent) => {
 <template>
   <div class="our-jounery mt-[90px] md:mt-[160px] md:px-[60px]">
     <h3 class="text-[28px] md:text-[48px] font-[500] text-center">
-      OUR JOUNERY
+      OUR JOURNEY
     </h3>
     <div class="relative">
       <div class="our-jounery-mask" />
@@ -127,7 +127,7 @@ const onScroll = (e: UIEvent) => {
                 {{ item.content.title }}
               </p>
               <p
-                class="mt-[20px] text-[14px] text-[#a4a4a4]"
+                class="mt-[20px] text-[14px] text-[#a4a4a4] whitespace-pre-line"
                 v-if="item.content.description"
               >
                 {{ item.content.description }}

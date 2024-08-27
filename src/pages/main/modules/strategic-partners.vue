@@ -99,7 +99,8 @@ const marquee = [
   }
 
   &::after {
-    @apply right-0  from-[#000]/0 to-[#000];
+    // some mobile device will overflow
+    @apply -right-[1px]  from-[#000]/0 to-[#000];
   }
 }
 </style>

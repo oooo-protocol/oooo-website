@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from 'oooo-components/ui/dropdown-menu'
 import AppHeader from 'oooo-components/layout/AppHeader.vue'
 import AppNav from 'oooo-components/layout/AppNav.vue'
 import AppFooter from 'oooo-components/layout/AppFooter.vue'
@@ -7,24 +8,6 @@ import Icon from 'oooo-components/ui/Icon.vue'
 const route = useRoute()
 
 const menus = [
-  {
-    name: 'BRIDGE',
-    children: [
-      {
-        name: 'MAINNET',
-        tag: 'a',
-        attributes: {
-          href: 'https://bridge.oooo.money'
-        }
-      }, {
-        name: 'TESTNET',
-        tag: 'a',
-        attributes: {
-          href: 'https://testnet.bridge.oooo.money'
-        }
-      }
-    ]
-  },
   {
     name: 'DOCS',
     tag: 'a',
@@ -59,16 +42,33 @@ const menus = [
         class="text-[32px] md:text-[44px]"
       />
     </RouterLink>
-    <a
-      class="ml-auto flex gap-[8px] -tracking-tighter hover:text-[#bce4cd]"
-      href="https://bridge.oooo.money"
-    >
-      <Icon
-        class="text-[22px] text-[#ff961e]"
-        name="bridge"
-      />
-      BRIDGE
-    </a>
+    <DropdownMenu>
+      <DropdownMenuTrigger class="ml-auto flex gap-[8px] -tracking-tighter hover:text-[#bce4cd]">
+        <Icon
+          class="text-[22px] text-[#ff961e]"
+          name="bridge"
+        />
+        BRIDGE
+      </DropdownMenuTrigger>
+      <DropdownMenuContent class="px-0 py-[12px] border-none min-w-[var(--radix-popper-anchor-width)]">
+        <DropdownMenuItem as-child>
+          <a
+            href="https://bridge.oooo.money"
+            target="_blank"
+          >
+            MAINNET
+          </a>
+        </DropdownMenuItem>
+        <DropdownMenuItem as-child>
+          <a
+            href="https://testnet.bridge.oooo.money"
+            target="_blank"
+          >
+            TESTNET
+          </a>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
     <a
       class="flex items-center gap-[8px] -tracking-tighter hover:text-[#bce4cd]"
       href="https://bridge.oooo.money/goooo"
