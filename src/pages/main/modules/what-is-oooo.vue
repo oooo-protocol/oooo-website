@@ -23,7 +23,7 @@ const list = [
     <p class="mt-[20px] text-[14px] md:text-[22px] font-[300] text-center">
       THE FIRST MODULAR OMNICHAIN PROTOCOL, UNITING NETWORKS AND ABSTRACTING ASSETS TO ENHANCE LIQUIDITY SCALABILITY AND OPERATIONAL EFFICIENCY.
     </p>
-    <div class="mt-[30px] md:mt-[60px] flex flex-col md:flex-row gap-[60px]">
+    <div class="mt-[30px] md:mt-[60px] flex flex-col md:flex-row gap-[20px] md:gap-[60px]">
       <div
         class="what-is-oooo-card p-[40px] flex flex-col xl:flex-row gap-[40px] items-center w-full border border-[#464646]"
         v-for="(item, index) of list"

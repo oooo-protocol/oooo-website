@@ -17,11 +17,11 @@ const list = [
 </script>
 
 <template>
-  <div class="mt-[90px] md:mt-[180px] md:px-[60px]">
+  <div class="mt-[90px] md:mt-[180px] xl:px-[60px]">
     <h3 class="text-[28px] md:text-[48px] font-[500] text-center leading-[1]">
       ACHIEVEMENTS
     </h3>
-    <div class="mt-[30px] md:mt-[60px] flex flex-col md:flex-row items-center md:items-start gap-[40px] md:gap-[54px]">
+    <div class="mt-[30px] md:mt-[60px] flex flex-col md:flex-row md:flex-wrap xl:flex-nowrap justify-center items-center md:items-start gap-[40px] md:gap-[54px]">
       <template
         v-for="(item, index) of list"
         :key="index"
@@ -39,7 +39,7 @@ const list = [
         <!-- divider -->
         <div
           v-if="index < list.length - 1"
-          class="h-[1px] w-[96px] md:h-[96px] md:w-[1px] bg-[#fff]/30"
+          class="h-[1px] w-[96px] md:h-[96px] md:w-[1px] bg-[#fff]/30 md:hidden xl:block"
         />
       </template>
     </div>

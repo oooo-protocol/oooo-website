@@ -72,9 +72,10 @@ const marquee = [
         v-for="(item, index) of marquee"
         :key="index"
         :direction="index % 2 ? 'reverse' : 'normal'"
+        :duration="40"
       >
         <img
-          class="mx-[20px] md:mx-[40px] h-[32px] md:h-[60px]"
+          class="mx-[20px] md:mx-[40px] h-[32px] md:h-[48px]"
           v-for="img in item"
           :key="img"
           :src="img"

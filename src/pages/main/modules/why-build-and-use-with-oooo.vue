@@ -16,15 +16,15 @@ const list = [
 </script>
 
 <template>
-  <div class="mt-[90px] md:mt-[105px]">
+  <div class="mt-[90px] xl:mt-[105px]">
     <h3 class="text-[28px] md:text-[48px] font-[500] leading-[1] text-center">
       WHY BUILD AND USE WITH oooo
     </h3>
     <div
-      class="mt-[30px] md:mt-[60px]"
+      class="mt-[30px] xl:mt-[60px]"
     >
       <div
-        class="sticky top-[60px] flex flex-col md:flex-row items-center gap-[60px] md:gap-[120px] p-[40px] md:px-[120px] md:py-[60px] bg-[#a6bcaf]"
+        class="sticky top-[20%] flex flex-col xl:flex-row items-center gap-[60px] xl:gap-[120px] p-[40px] xl:px-[120px] xl:py-[60px] bg-[#a6bcaf]"
         :class="{
           'mt-[100vh]': index !== 0,
           'bg-[#e9f3ed]': index % 2
@@ -40,7 +40,7 @@ const list = [
             {{ item.content }}
           </p>
         </div>
-        <div class="shrink-0 w-full md:w-[55.6%] aspect-[2/1]">
+        <div class="shrink-0 w-full xl:w-[55.6%] aspect-[2/1]">
           <img
             class="w-full h-full"
             :src="item.img"
