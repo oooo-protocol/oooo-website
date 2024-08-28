@@ -1,111 +1,71 @@
 <script setup lang="ts">
-import Icon from 'oooo-components/ui/Icon.vue'
+import { Button } from 'oooo-components/ui/button'
 import { OOOO } from '@/composables/oooo'
-
-const initializing = ref(true)
-
-const menus = [
-  {
-    title: '# / A - D  ————————',
-    items: [
-      'BeL2',
-      'BEVM',
-      'B^2',
-      'Babylon',
-      'Chainway',
-      'ckBTC',
-      'Dovi',
-      'DFS Network'
-    ]
-  }, {
-    title: 'E - M  ————————',
-    items: [
-      'Liquid',
-      'Lightning',
-      'MAP Protocol',
-      'Merlin chain'
-    ]
-  }, {
-    title: 'N - O  ————————',
-    items: [
-      'Nubit'
-    ]
-  }, {
-    title: 'P - S  ————————',
-    items: [
-      'RSK',
-      'RGB',
-      'QED Protocol',
-      'Stacks',
-      'SatoshiVM'
-    ]
-  }, {
-    title: 'T - Z  ————————',
-    items: [
-      'Veda',
-      'x.TAI'
-    ]
-  }
-]
+import WhatIsOooo from './modules/what-is-oooo.vue'
+import WhyBuildAndUseWithOooo from './modules/why-build-and-use-with-oooo.vue'
+import Achievement from './modules/achievement.vue'
+import SupportedChainsAndTokens from './modules/supported-chains-and-tokens.vue'
+import OurJounery from './modules/our-jounery.vue'
+import StrategicPartners from './modules/strategic-partners.vue'
+import EmpoweringDevelopersAndUsers from './modules/empowering-developers-and-users.vue'
+import { useElementSize } from '@vueuse/core'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 onMounted(async () => {
   const oooo = new OOOO('.oooo-model')
   await oooo.init()
   void oooo.start()
-  initializing.value = false
 })
+
+/**
+ * listen container height change and refresh ScrollTrigger
+ */
+const homepageRef = ref(null)
+const { height } = useElementSize(homepageRef)
+watch(height, () => { ScrollTrigger.refresh() })
 </script>
 
 <template>
-  <div class="oooo-model" />
-  <div class="relative flex flex-col min-h-[calc(100vh-208px)] px-[24px] md:px-[48px] xl:px-[120px]">
-    <h2 class="relative z-[1] box-content pt-[16px] pb-[32px] md:pt-[20px] md:pb-[120px] xl:pt-[16px] xl:pb-[100px] text-[24px] md:text-[32px] xl:text-[52px] leading-[1.1] font-light xl:max-w-[1100px]">
-      <b>
-        <a
-          href="https://discord.gg/ooooprotocol"
-          target="_blank"
-        >oooo</a>
-      </b>
-      is the first modular omnichain interoperability protocol supporting <b>bitcoin ecosystem</b>.
-    </h2>
-    <div class="relative grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 gap-y-[24px] md:gap-y-[80px] -mx-[24px] mb-auto pb-[52px] md:pb-[173px] xl:pb-[327px] px-[24px] xl:w-[1300px] normal-case">
-      <div
-        class="space-y-[4px] md:space-y-[8px] md:even:mt-[58px]"
-        v-for="(menu, index) in menus"
-        :key="index"
-      >
-        <p class="mb-[16px] text-[12px] xl:text-[14px] font-light leading-none text-[#878787]">
-          {{ menu.title }}
-        </p>
-        <p
-          class="text-[10px] md:text-[12px] xl:text-[16px] leading-[1.2] tracking-[2px]"
-          v-for="item of menu.items"
-          :key="item"
-        >
-          {{ item }}
-        </p>
-      </div>
-    </div>
-    <div class="relative xl:flex xl:items-center xl:gap-[250px]">
-      <Icon
-        class="mb-[32px] md:mb-[0] oooo-logo xl:shrink-0"
-        name="a-OOOO2024"
-      />
-      <div class="xl:flex-1">
-        <!-- <div class="relative z-[1] -mt-[20px] xl:mt-0 md:text-right">
-          <a
-            href="./terms"
-            target="_blank"
+  <div
+    ref="homepageRef"
+    class="homepage"
+  >
+    <div class="relative h-[100vh] w-[100vw] left-[50%] -ml-[50vw]">
+      <div class="oooo-model" />
+      <div class="flex flex-col justify-center items-center px-[24px] md:px-[48px] xl:px-[120px] h-full">
+        <h2 class="text-[48px] md:text-[68px] font-[500] leading-[1] text-center">
+          BORN FOR LIQUIDITY
+        </h2>
+        <h3 class="mt-[20px] md:mt-[56px] text-[14px] md:text-[27px] text-center max-w-[1056px]">
+          STREAMLINING AND COORDINATING LIQUIDITY ACROSS CHAINS, SIMPLIFYING ASSET MANAGEMENT ON-CHAIN AND BEYOND.
+        </h3>
+        <div class="mt-[60px] md:mt-[116px] flex flex-col md:flex-row gap-[16px] w-full md:w-auto">
+          <Button
+            class="w-full md:w-[240px]"
+            as="a"
+            href="https://bridge.oooo.money/"
           >
-            Powered by oooo | Terms of Use
-          </a>
-        </div> -->
-        <div class="relative -ml-[9px] h-[80px] md:h-[160px] xl:h-[240px] md:-ml-[20px] md:text-right">
-          <p class="absolute text-[80px] md:text-[160px] xl:text-[240px] leading-none overflow-y-hidden font-medium normal-case">
-            {Bitcoin}
-          </p>
+            GO TO BRIDGE
+          </Button>
+          <Button
+            class="w-full md:w-[240px]"
+            variant="outline"
+            as="a"
+            href="https://bridge.oooo.money/goooo"
+          >
+            EARN Goooo POINTS
+          </Button>
         </div>
       </div>
+    </div>
+    <div class="px-[24px] md:px-[48px] xl:px-[120px]">
+      <WhatIsOooo />
+      <EmpoweringDevelopersAndUsers />
+      <WhyBuildAndUseWithOooo />
+      <Achievement />
+      <SupportedChainsAndTokens />
+      <OurJounery />
+      <StrategicPartners />
     </div>
   </div>
 </template>
@@ -113,7 +73,7 @@ onMounted(async () => {
 <style lang="scss" scoped>
 .oooo {
   &-model {
-    @apply -z-[1] fixed left-0 top-0 w-full h-full;
+    @apply -z-[1] absolute left-0 top-0 w-full h-full;
   }
 
   &-logo {
