@@ -58,7 +58,7 @@ const list = [
     title: 'X LAYER'
   }, {
     img: ARB_IMAGE,
-    title: 'ARBITURM'
+    title: 'ARBITRUM'
   }, {
     img: BASE_IMAGE,
     title: 'BASE'
