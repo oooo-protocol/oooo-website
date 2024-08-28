@@ -36,7 +36,7 @@ watch(height, () => { ScrollTrigger.refresh() })
         <h2 class="text-[48px] md:text-[68px] font-[500] leading-[1] text-center">
           BORN FOR LIQUIDITY
         </h2>
-        <h3 class="mt-[20px] md:mt-[56px] text-[14px] md:text-[27px] md:font-[300] text-center max-w-[1056px]">
+        <h3 class="mt-[20px] md:mt-[56px] text-[14px] md:text-[27px] text-center max-w-[1056px]">
           STREAMLINING AND COORDINATING LIQUIDITY ACROSS CHAINS, SIMPLIFYING ASSET MANAGEMENT ON-CHAIN AND BEYOND.
         </h3>
         <div class="mt-[60px] md:mt-[116px] flex flex-col md:flex-row gap-[16px] w-full md:w-auto">

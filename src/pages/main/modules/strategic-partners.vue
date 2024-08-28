@@ -27,13 +27,22 @@ import LUMOZ_IMAGE from '@/assets/images/partners/lumoz.png'
 import AILAYER_IMAGE from '@/assets/images/partners/ailayer.png'
 import AGENTLAYER_IMAGE from '@/assets/images/partners/agentlayer.png'
 import BIHELIX_IMAGE from '@/assets/images/partners/bihelix.png'
+import BINANCE_IMAGE from '@/assets/images/partners/binance.png'
+import COIN98_IMAGE from '@/assets/images/partners/coin98.png'
+import MODE_IMAGE from '@/assets/images/partners/mode.png'
+import XLAYER_IMAGE from '@/assets/images/partners/xlayer.png'
 import UXLINK_IMAGE from '@/assets/images/partners/uxlink.png'
+import ZETACHAIN_IMAGE from '@/assets/images/partners/zetachain.png'
+import CORE_IMAGE from '@/assets/images/partners/core.png'
 
 const marquee = [
   [
     BITLAYER_IMAGE,
     BEVM_IMAGE,
     B2_IMAGE,
+    BINANCE_IMAGE,
+    COIN98_IMAGE,
+    MODE_IMAGE,
     ROOTSTOCK_IMAGE,
     MERLIN_IMAGE,
     ALIENX_IMAGE,
@@ -45,12 +54,15 @@ const marquee = [
     BITGET_IMAGE,
     ONEKEY_IMAGE,
     SATOSHI_IMAGE,
+    XLAYER_IMAGE,
     BOB_IMAGE,
     ROOCH_IMAGE,
     BEVMSWAP_IMAGE,
     LAYEREAGE_IMAGE
   ], [
     MACARON_IMAGE,
+    ZETACHAIN_IMAGE,
+    CORE_IMAGE,
     PARTICLE_IMAGE,
     BIDO_IMAGE,
     ZULU_IMAGE,

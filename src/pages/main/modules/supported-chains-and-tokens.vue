@@ -93,9 +93,6 @@ const list = [
     img: OP_IMAGE,
     title: 'OPTIMISM'
   }, {
-    img: BOUNCEBIT_IMAGE,
-    title: 'BOUNCEBIT'
-  }, {
     img: CORE_IMAGE,
     title: 'CORE'
   }, {
@@ -118,10 +115,14 @@ const list = [
     title: 'ZKLINK'
   }, {
     img: FANTOM_IMAGE,
-    title: 'FANTOM'
+    title: 'SONIC'
   }, {
     img: BINANCE_IMAGE,
     title: 'BINANCE'
+  }, {
+    img: BOUNCEBIT_IMAGE,
+    title: 'BOUNCEBIT',
+    description: 'SOON'
   }, {
     img: ROOCH_IMAGE,
     title: 'ROOCH',
